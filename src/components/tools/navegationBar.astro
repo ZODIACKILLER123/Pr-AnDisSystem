@@ -1,4 +1,7 @@
-<nav class="w-full h-17">
+---
+---
+
+<nav class="w-full h-17 z-50">
   <div class="max-lg:collapse bg-blue-800 lg:mb-48 shadow-sm w-full rounded-md">
     <input id="navbar-1-toggle" class="peer hidden" type="checkbox" />
     <label for="navbar-1-toggle" class="fixed inset-0 hidden max-lg:peer-checked:block"></label>
@@ -7,7 +10,7 @@
         <label for="navbar-1-toggle" class="btn btn-ghost lg:hidden">
           <svg xmlns="../assets/SuperTicket.svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
         </label>
-        <button class="btn btn-ghost text-xl">SuperTicket.bo</button>
+        <button class="text-xl hidden md:block hover:text-yellow-300 ">SuperTicket.bo</button>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
@@ -42,21 +45,40 @@
         </ul>
       </div>
       <div class="navbar-end">
-        <input type="text" placeholder="Search" class="input input-bordered w-64 lg:w-auto" />
+        <input type="text" placeholder="🔍 Search" class="input input-bordered w-64 lg:w-auto" />
       </div>
     </div>
 
     <div class="collapse-content lg:hidden z-1">
-      <ul class="menu">
-        <li><button>Item 1</button></li>
+      <ul class="menu z-1">
+        <li><button>Inicio</button></li>
         <li>
-          <button>Parent</button>
-          <ul>
-            <li><button>Submenu 1</button></li>
-            <li><button>Submenu 2</button></li>
-          </ul>
+          <details>
+            <summary>Generalidades</summary>
+            <ul class="p-2 w-40 z-1">
+              <li><button>Introduccion</button></li>
+              <li><button>Antecedentes</button></li>
+              <li><button>Planteamiento del Problema</button></li>
+              <li><button>Arbol de Problemas</button></li>
+              <li><button>Generalidades</button></li>
+              <li><button>Generalidades</button></li>
+              <li><button>Generalidades</button></li>
+
+            </ul>
+          </details>
         </li>
-        <li><button>Item 3</button></li>
+        <li>
+          <details>
+            <summary>Analisis Estructurado</summary>
+            <ul class="p-2 w-40 z-1">
+              <li><button>Submenu 1</button></li>
+              <li><button>Submenu 2</button></li>
+            </ul>
+          </details>
+        </li>
+        <li><button>Orientado a Objetos</button></li>
+        <li><button>Video Tutorial</button></li>
+        <li><button>Contacto</button></li>
       </ul>
     </div>
   </div>

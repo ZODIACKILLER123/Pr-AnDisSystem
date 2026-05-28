@@ -1,11 +1,21 @@
 ---
 import NAVBAR from '../components/tools/navegationBar.astro'  
 import CARROUSEL from '../components/tools/carrousel.astro'
-import MINICAROUSEL from '../components/tools/minicarrousel.astro'
+import CARD from '../components/tools/cards.astro'
 ---
 
 <main class="flex flex-col ">
   <NAVBAR />
   <CARROUSEL />
-  <MINICAROUSEL />
+  <section class="flex flex-col w-full justify-center items-center ">      
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      <CARD />
+      <CARD />
+      <CARD />
+      <CARD />
+      <CARD />
+      <CARD />
+      <CARD />
+    </div>
+  </section>
 </main>

@@ -1,46 +1,88 @@
-<section>
-  <div class="carousel w-full">
+---
+import { Image } from 'astro:assets';
+import image10 from '../../assets/carrouselIMG/Shop5_Rotativo_10_yNburkJ.jpg'
+import image11 from '../../assets/carrouselIMG/Shop5_Rotativo_21.jpg'
+import image12 from '../../assets/carrouselIMG/Shop5_Rotativo_22.jpg'
+import image13 from '../../assets/carrouselIMG/Shop5_Rotativo_23.jpg'
+import image14 from '../../assets/carrouselIMG/Shop5_Rotativo_24.jpg'
+---
+
+<section class="flex justify-center items-center mt-10 mb-10">
+  <div id="main-carousel" class="carousel w-390 h-64 md:h-96 lg:h-125 rounded-2xl">
     <div id="slide1" class="carousel-item relative w-full">
-      <img src="https://superticket.bo/media/banners/Shop5_Rotativo_24.jpg"
-        class="w-full" />
+      <Image src={image10} alt="image1" class="w-full" />
       <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-        <a href="#slide4" class="btn btn-circle">❮</a>
+        <a href="#slide5" class="btn btn-circle">❮</a>
         <a href="#slide2" class="btn btn-circle">❯</a>
       </div>
     </div>
     <div id="slide2" class="carousel-item relative w-full">
-      <img src="https://superticket.bo/media/banners/Shop5_Rotativo_23.jpg"
-        class="w-full" />
+      <Image src={image11} alt="image2" class="w-full" />
       <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
         <a href="#slide1" class="btn btn-circle">❮</a>
         <a href="#slide3" class="btn btn-circle">❯</a>
       </div>
     </div>
     <div id="slide3" class="carousel-item relative w-full">
-      <img src="https://superticket.bo/media/banners/Shop5_Rotativo_22.jpg"
-        class="w-full" />
+      <Image src={image12} alt="image3" class="w-full" />
       <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
         <a href="#slide2" class="btn btn-circle">❮</a>
         <a href="#slide4" class="btn btn-circle">❯</a>
       </div>
     </div>
     <div id="slide4" class="carousel-item relative w-full">
-      <img src="https://superticket.bo/media/banners/Shop5_Rotativo_21.jpg"
-          class="w-full" />
+      <Image src={image13} alt="image4" class="w-full" />
       <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
         <a href="#slide3" class="btn btn-circle">❮</a>
+        <a href="#slide5" class="btn btn-circle">❯</a>
+      </div>
+    </div>
+    <div id="slide5" class="carousel-item relative w-full">
+      <Image src={image14} alt="image5" class="w-full" />
+      <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+        <a href="#slide4" class="btn btn-circle">❮</a>
         <a href="#slide1" class="btn btn-circle">❯</a>
       </div>
     </div>
   </div>
 </section>
-
 <script>
-  function automaticSlide(){
-    
-  }
-  
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.getElementById("main-carousel")
+    const slides = document.querySelectorAll(".carousel-item");
+    let current = 0;
+    let autoplay: ReturnType<typeof setInterval>;
 
+    function goToSlide(index: number) {
+      current = (index + slides.length) % slides.length;
+      const slideWidth = carousel!.offsetWidth;
+      carousel!.scrollTo({
+        left: slideWidth * current,
+        behavior: "smooth"
+      })
+    } 
 
+    function startAutoplay() {
+      autoplay = setInterval(() => {
+        goToSlide(current + 1);
+      }, 3000);
+    }
 
+    function resetAutoplay() {
+      clearInterval(autoplay);
+      startAutoplay();
+    }
+
+    carousel!.querySelectorAll("a[href^='#slide']").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = (btn as HTMLAnchorElement).getAttribute("href")!;
+        const targetIndex = parseInt(target.replace("#slide", "")) - 1;
+        goToSlide(targetIndex);
+        resetAutoplay();
+      });
+    });
+
+    startAutoplay();
+  }) 
 </script>
