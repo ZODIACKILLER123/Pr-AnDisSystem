@@ -3,12 +3,22 @@ import NAVBAR from '../components/tools/navegationBar.astro'
 import CARROUSEL from '../components/tools/carrousel.astro'
 import CARD from '../components/tools/cards.astro'
 ---
+<header class="bg-[#1e538a] lg:h-27 md:15 sm:15">
+    <NAVBAR />
+</header>
 
-<main class="flex flex-col ">
-  <NAVBAR />
+<main class="w-full flex flex-col ">  
   <CARROUSEL />
+  <article class="bg-slate-200 flex flex-col justify-center items-center h-100 mb-10">
+    <h2 class="text-black text-3xl md:text-4xl text-center font-mono">SISTEMA DE GESTION DE VENTA PARA SUPERTICKET BOLIVIA</h2>
+    <br>
+    <br>
+    <p class="text-black text-center text-xl lg:w-250 md:w-200 sm:w-100">
+      SuperTicket Bolivia es una plataforma y empresa nacional dedicada a la comercialización de entradas y gestión de control de accesos para eventos masivos, conciertos, obras de teatro, ferias y conferencias en el país.
+    </p>
+  </article>
   <section class="flex flex-col w-full justify-center items-center ">      
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 w-80 lg:w-300 md:w-150">
       <CARD />
       <CARD />
       <CARD />

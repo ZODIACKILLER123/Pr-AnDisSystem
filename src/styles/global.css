@@ -1,54 +1,20 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-@plugin "daisyui/theme" {
-  name: "superticket";
-  default: true;
-
-  --color-primary: #1e40af;
-  --color-secondary: #3b82f6;
-  --color-accent: #f59e0b;
-  --color-base-100: #ffffff;
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #03738C black;
 }
 
-
-
-.mini_carousel {
-  margin: 100px auto;
-  width: 100%;
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+::-webkit-scrollbar {
+  width: 15px;
 }
 
-.group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: scroll 15s infinite linear;
+::-webkit-scrollbar-track {
+  background: black;
 }
 
-.card {
-  flex: 0 0 3em;
-  height: 5em;
-  font-size: 3rem;
-  border-radius: 30px;
-  text-align: center;
-  align-content: center;
-}
-
-.card img {
-  border-radius: 30px;
-  width: 150px;
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
+::-webkit-scrollbar-thumb {
+  background: #03738C;
+  border-radius: 8px;
 }
