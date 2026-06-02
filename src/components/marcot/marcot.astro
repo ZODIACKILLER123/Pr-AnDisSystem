@@ -1,0 +1,371 @@
+---
+import NAV from '../tools/navegationBar.astro'
+import "../../assets/fonts.css"
+import { Image } from 'astro:assets'
+import tree from '../../assets/images/arbol.png'
+import { Icon } from 'astro-icon/components' 
+---
+
+<header class="bg-[#1e538a] lg:h-27 md:15 sm:15"> 
+  <NAV /> 
+</header>
+<div class="w-full flex items-center justify-center">
+  
+  <!-- recuadro de puntos -->
+  
+  <section class="bg-gray-800 w-100 h-110 flex flex-col p-6 rounded-2xl">
+    <h3 class="text-2xl text-white m-3 font-[dynapuff] text-center border-b-2 mb-6">Marco Teorico</h3>
+    <ul>
+      <li class="text-white m-3">
+        <a href="" class="hover:text-cyan-400">
+          Introduccion
+        </a>
+      </li>
+      <li class="text-white m-3">
+        <a href="#" class="hover:text-cyan-400">
+          Antecedentes
+        </a>
+      </li>
+      <li class="text-white m-3">
+        <a href="#" class="hover:text-cyan-400">
+          Planificacion del Problema
+        </a>
+      </li>
+      <li class="text-white m-3">
+        <a href="#" class="hover:text-cyan-400">
+          Arbol de Problemas
+        </a>
+      </li>
+      <li class="text-white m-3">
+        <a href="#" class="hover:text-cyan-400">
+          Formulacion del Problema
+        </a>
+      </li>
+      <li class="text-white m-3">
+        <a href="#" class="hover:text-cyan-400">
+          Proposito del Estudio
+        </a>
+      </li>
+      <li class="text-white m-3">
+        <a href="#" class="hover:text-cyan-400">
+          Metodologia
+        </a>
+      </li>
+      <li class="text-white m-3">
+        <a href="#" class="hover:text-cyan-400">
+          Planificacion de Actividades
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- toda la informacion esta en esta seccion -->
+
+  <section class="w-150 m-7">
+
+    <!-- Introduccion -->
+    
+    <article class="text-black">
+      <h1 class=" text-2xl font-dynapuff border-b-2 mb-4">Introduccion</h1>
+      <p class=" font-sans text-[18px]">
+      En la era digital actual, el <b class="text-blue-700">comercio electrónico</b> ha revolucionado la forma en que las personas adquieren bienes y servicios, eliminando barreras geográficas y temporales. En Bolivia, un país con una rica tradición cultural y un creciente interés por eventos como conciertos, obras teatrales y festivales, plataformas como <b class="text-blue-700">SuperTicket.bo han emergido como soluciones innovadoras para facilitar la venta y administración de entradas en línea</b>. Esta plataforma no solo representa un avance tecnológico, sino también un puente entre organizadores de eventos y un público cada vez más conectado.
+      <br>
+      <br>
+
+      <b class="text-blue-700">SuperTicket.bo</b>, operada por <b class="text-cyan-400">Sociedad Comercial para el Ticketing SRL</b> con sede en La Paz y Santa Cruz, se posiciona como la principal red de ticketing en Bolivia. Lanzada para modernizar el sector de eventos, permite a los usuarios comprar entradas de manera rápida y segura desde cualquier dispositivo móvil o computadora. Con opciones de pago digitales como tarjetas de crédito, QR Simple y BaniPay, la plataforma garantiza transacciones seguras y entrega inmediata de boletos en formato PDF por correo electrónico.
+      <br>
+      <br>
+      
+      <div class="text-white border-l-4 border-b-4 border-red-700 bg-gradient-to-r from-orange-400 to-orange-600 p-4 rounded-2xl">Además, cuenta con puntos de venta físicos en ciudades clave, combinando lo tradicional con lo digital para llegar a todos los bolivianos. </div>
+      <br>
+      <br>
+      El desarrollo de las <b class="text-blue-700">tecnologías de la información y comunicación (TIC)</b> ha transformado radicalmente el panorama económico en Bolivia. Según datos de la Agencia de <b class="text-blue-700">Gobierno Electrónico y Tecnologías de Información y Comunicación AGETIC)</b>, el acceso a internet ha crecido un 12% anual, alcanzando al 68% de la población en 2023. Este auge ha impulsado el comercio electrónico, que pasó de representar solo el 9% de las compras en línea en 2019 a un crecimiento explosivo durante la pandemia de COVID-19, con un aumento del 150% en ventas digitales en 2021.
+      <br>
+      <br>
+
+      Sin embargo, este avance no está exento de desafíos. En años anteriores, la venta de entradas se realizaba principalmente de forma presencial, generando largas filas, errores humanos y pérdidas económicas. Con el surgimiento del comercio electrónico, surgieron soluciones que facilitan la compra de boletos, el control de aforo mediante códigos QR y la validación en tiempo real. <b class="text-blue-700"> SuperTicket.bo </b>ha sido pionera en este rubro, posicionándose como una de las plataformas líderes en Bolivia.
+      <br>
+      <br>
+
+      El presente proyecto tiene como finalidad <b class="text-blue-700">analizar y diseñar un sistema de información </b>optimizado basado en <b class="text-blue-700">SuperTicket.bo</b>, que mejore los procesos de venta, control y administración de entradas. A través de este estudio, se busca identificar las limitaciones actuales —como la falta de automatización total y la escasa comunicación entre organizadores y compradores— y proponer soluciones innovadoras que garanticen eficiencia, seguridad y una experiencia superior para los usuarios.
+      <br>
+      <br>
+      <span class="text-red-700 font-bold">SuperTicket.bo no es solo una plataforma de ticketing; es un ejemplo de cómo la tecnología puede democratizar el acceso a la cultura en Bolivia. </span>
+      </p>
+    </article>
+
+    <!-- Antecedentes -->
+
+    <article class="text-black mt-5">
+      <h1 class="text-2xl font-dynapuff border-b-2 mb-4">Antecedentes</h1>
+      <div>
+        <p>La venta de entradas para eventos culturales y de entretenimiento en Bolivia ha experimentado una transformación radical en las últimas décadas, pasando de un modelo exclusivamente presencial a uno predominantemente digital.</p>
+        <br>
+        <br>
+        <ul>
+          <li>
+            <div class="flex gap-4">
+              <Icon name="pulse" size={20} class="text-blue-700" name="pulse" /> 
+              <h3 class="text-blue-700 font-dynapuff text-xl">Antes del 2010 – Venta presencial tradicional</h3>
+            </div>
+            <p class="ml-7">La adquisición de entradas se realizaba únicamente en taquillas físicas, generando largas filas, pérdida de tiempo, reventa informal y falta de control sobre el aforo real de los eventos.</p>
+          </li>
+          <li>
+            <div class="flex gap-4 mt-3">
+              <Icon name="pulse" size={20} class="text-blue-700" name="pulse" /> 
+              <h3 class="text-blue-700 font-dynapuff text-xl">2010–2015 – Primeras plataformas digitales</h3>
+            </div>
+            <p class="ml-7"> Aparecen los primeros intentos de venta en línea en Bolivia (principalmente para eventos internacionales), pero con limitaciones técnicas, poca confianza del público y métodos de pago restringidos.</p>
+          </li>
+          <li>
+            <div class="flex gap-4 mt-3">
+              <Icon name="pulse" size={20} class="text-blue-700" name="pulse" /> 
+              <h3 class="text-blue-700 font-dynapuff text-xl">2016 – Nacimiento de SuperTicket.bo</h3>
+            </div>
+            <p class="ml-7">Se funda Sociedad Comercial para el Ticketing SRL, creadora de SuperTicket.bo, con el objetivo de profesionalizar y digitalizar la venta de entradas en el país.</p>
+          </li>
+          <li>
+            <div class="flex gap-4 mt-3">
+              <Icon name="pulse" size={20} class="text-blue-700" name="pulse" /> 
+              <h3 class="text-blue-700 font-dynapuff text-xl">2018–2020 – Crecimiento exponencial</h3>
+            </div>
+            <p class="ml-7">La plataforma se consolida como líder del mercado boliviano, incorporando pagos con tarjeta, QR y billeteras móviles. Introduce la entrega inmediata de entradas digitales y códigos QR para control de acceso.</p>
+          </li>
+          <li>
+            <div class="flex gap-4 mt-3">
+              <Icon name="pulse" size={20} class="text-blue-700" name="pulse" /> 
+              <h3 class="text-blue-700 font-dynapuff text-xl">2020–2021 – Pandemia y boom del e-commerce</h3>
+            </div>
+            <p class="ml-7">Durante la emergencia sanitaria, SuperTicket.bo fue una de las pocas plataformas que mantuvo operaciones, adaptándose rápidamente a eventos virtuales y reforzando su infraestructura digital.</p>
+          </li>
+          <li>
+            <div class="flex gap-4 mt-3">
+              <Icon name="pulse" size={20} class="text-blue-700" name="pulse" /> 
+              <h3 class="text-blue-700 font-dynapuff text-xl">2022–2026 – Madurez del mercado</h3>
+            </div>
+            <p class="ml-7">Hoy SuperTicket.bo es la red de ticketing más grande de Bolivia, con presencia en La Paz, Santa Cruz, Cochabamba, Sucre y otras ciudades, manejando desde ferias locales hasta conciertos internacionales de gran magnitud.</p>
+          </li>
+        </ul>
+        <br>
+        <br>
+        <div class="bg-gradient-to-r from-blue-400 to-blue-800 text-white p-4 rounded-2xl border-l-5 border-b-5 border-l-blue-500 border-b-blue-500">
+           Actualmente, SuperTicket.bo procesa miles de transacciones diarias, trabaja con los principales productores de eventos del país y ha logrado que más del 75% de las entradas para conciertos y espectáculos de gran formato se vendan de forma digital, marcando un hito en la modernización del sector cultural boliviano.
+        </div>  
+        <br>
+        <br>
+        <p>Sin embargo, este rápido crecimiento también ha puesto en evidencia ciertas limitaciones técnicas y operativas que afectan la experiencia de usuarios y organizadores, lo que justifica la necesidad del presente proyecto de análisis y rediseño del sistema.</p>
+      </div>
+    </article>
+  
+    <!-- Planteamiento del Problema -->
+
+    <article class="text-black mt-7">
+      <h1 class="font-dynapuff text-2xl border-b-2 border-b-black font-dynapuff mb-4">Planificacion del Problema</h1>
+      <div>
+        <p>Apesar de los avances que representa SuperTicket.bo en la venta de entradas en línea en Bolivia, el sistema actual presenta <b class="text-blue-700">limitaciones significativas</b> que afectan tanto a los organizadores de eventos como a los usuarios finales, generando ineficiencias operativas y una experiencia de usuario subóptima. 
+          Entre las principales deficiencias detectadas se encuentran:
+
+        </p>
+        <br>
+        
+        <ul class="bg-gradient-to-tr from-yellow-400 to-orange-600 rounded-2xl p-4">
+          <li>
+            <div class="flex items-center">
+              <Icon name="alert" size={40} class="text-gray-900 m-4" />
+              <p class="text-white">Falta de automatización total en el proceso de validación y control de acceso en eventos.</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <Icon name="alert" size={50} class="text-gray-900 m-4" />
+              <p class="text-white">
+                Comunicación limitada entre organizadores y compradores (notificaciones, cambios de horario, cancelaciones, etc.).</p>
+            </div>
+          </li>
+          <br>
+          <li>
+            <div class="flex items-center">
+              <Icon name="alert" size={50} class="text-gray-900 m-4" />
+              <p class="text-white">Escasa transparencia y acceso en tiempo real a reportes detallados de ventas y aforo para los organizadores.</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <Icon name="alert" size={50} class="text-gray-900 m-4" />
+              <p class="text-white">Problemas de escalabilidad y saturación del sistema en eventos de alta demanda (venta masiva de entradas).</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <Icon name="alert" size={50} class="text-gray-900 m-4" />
+              <p class="text-white">Dependencia excesiva de procesos manuales en puntos de venta físicos y validación en puerta.</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <Icon name="alert" size={50} class="text-gray-900 m-4" />
+              <p class="text-white">Falta de funcionalidades avanzadas como reventa controlada, suscripciones o paquetes familiares.</p>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <Icon name="alert" size={40} class="text-gray-900 m-4" />
+              <p class="text-white">Experiencia móvil no totalmente optimizada en algunos módulos del sistema.</p>
+            </div>
+          </li>
+        </ul>
+        <br>
+         
+        <p>Estas carencias provocan <b class="text-cyan-400">retrasos en el ingreso a eventos, errores en el control de aforo, insatisfacción del cliente final y pérdida de ingresos</b> para los organizadores. Además, en un contexto donde la competencia en el sector de ticketing digital crece rápidamente, estas limitaciones representan un riesgo para la sostenibilidad y liderazgo de la plataforma.</p>
+        <br>
+
+        <div class="bg-gradient-to-br from-gray-400 to-gray-800 text-white rounded-2xl p-6">¿Cómo puede un sistema de información basado en la web mejorar la gestión, venta y control de entradas para eventos culturales y artísticos en Bolivia, garantizando mayor eficiencia, seguridad en las transacciones y una experiencia de usuario superior tanto para organizadores como para asistentes?</div>
+        <br>
+        
+        <p>Este proyecto busca dar respuesta a dicha interrogante mediante el análisis profundo y el rediseño optimizado del sistema SuperTicket.bo, aplicando metodologías modernas de ingeniería de software que permitan superar las debilidades actuales y convertirlas en oportunidades de mejora competitiva.</p>
+      </div>
+    </article>
+    <article class="text-black mt-4">
+      <h1 class="text-2xl font-dynapuff border-b-2">Arbol de Problema</h1>
+      <div class="mt-5">
+        <h3 class="text-xl font-bold">Problema Central:</h3>
+        <div class="bg-gradient-to-r from-blue-400 to-blue-800 p-5 rounded-2xl">
+          <h2 class="font-bold text-white text-center">Ineficiencia en la gestión y venta de entradas a eventos</h2>
+          <h2 class="font-bold text-white text-center">Causas Principales</h2>
+          <ul>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-white">Procesos manuales en la validación de boletos en puerta.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-white">Falta de actualización en tiempo real del aforo y estado de ventas.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-white">Escasa automatización en la gestión de reembolsos y cambios.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-white">Comunicación deficiente entre plataforma, organizadores y clientes.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-white">Dependencia de personal físico en puntos de venta y control de acceso.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-white">Procesos manuales en la validación de boletos en puerta.</p>
+            </li>
+          </ul>
+          <h2 class="font-bold text-yellow-400 text-center">Efectos Principales</h2>
+          <ul>
+           <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-yellow-300">Insatisfacción y quejas frecuentes de los asistentes.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-yellow-300">Pérdida de ingresos por errores en control de aforo.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-yellow-300">Dificultad para tomar decisiones rápidas por parte de organizadores.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-yellow-300">Riesgo de fraude y reventa no controlada.</p>
+            </li>
+            <li class="flex gap-3 m-3">
+              <Icon name="wrong" size={30} class="text-red-600"/>
+              <p class="text-yellow-300">Imagen negativa de la plataforma ante eventos de alta demanda.</p>
+            </li> 
+          </ul>
+        </div>
+        <div class="mt-6">
+          <h2 class="text-red-600 text-xl font-dynapuff">Representacion Grafica del Arbol de Problemas: </h2>
+          <Image src={tree} alt="arbol P" width={500} class="mt-5 mb-5"/> 
+            <p class="text-blue-700 font-bold text-center mb-5">Árbol de Problemas - SuperTicket.bo</p>
+            <p>El árbol de problemas permite visualizar claramente las relaciones causa-efecto del problema central, sirviendo como base fundamental para la formulación de objetivos y el diseño de soluciones efectivas.</p>   
+        </div>
+      </div>
+    </article>
+
+    <!-- Formulacion del Problema -->
+
+    <article class="text-black mt-5">
+      <h1 class="text-2xl border-b-2 font-dynapuff mb-5">Formulacion del Problema</h1>
+      <div>
+        ¿Cómo puede un sistema de información basado en la web
+        mejorar la gestión, venta y control de entradas para eventos culturales y artísticos en Bolivia, garantizando mayor eficiencia, seguridad en las transacciones y una experiencia de usuario superior tanto para organizadores como para asistentes?
+        Esta interrogante surge a partir de las limitaciones identificadas en el funcionamiento actual de SuperTicket.bo:
+
+        Falta de automatización completa en procesos críticos como validación en puerta y actualización en tiempo real del aforo.
+        Comunicación insuficiente entre la plataforma, los organizadores y los compradores.
+        Escasa disponibilidad de reportes avanzados y analítica para la toma de decisiones.
+        Problemas de escalabilidad en eventos de alta demanda.
+        Experiencia móvil no totalmente optimizada y procesos manuales residuales.
+        Abordar estas debilidades mediante un rediseño técnico y funcional del sistema permitirá no solo resolver los problemas actuales, sino también posicionar a SuperTicket.bo como la solución líder y más confiable del mercado boliviano de ticketing digital.
+
+        La respuesta a esta pregunta guiará todo el análisis, diseño e implementación del presente proyecto.
+      </div>
+    </article>
+    <article class="text-black">
+      <h1>Proposito del Estudio</h1>
+      <p>
+        Objetivo General
+        Diseñar un sistema de información optimizado que permita la venta, control y administración de entradas en línea a través de la plataforma SuperTicket.bo, mejorando la eficiencia operativa, la seguridad de las transacciones y la experiencia de usuario tanto para organizadores de eventos como para los asistentes.
+        Objetivos Específicos
+        Analizar exhaustivamente los procesos actuales de compra, validación y administración de entradas en SuperTicket.bo.
+        Identificar y documentar los requerimientos funcionales y no funcionales del sistema mejorado.
+        Modelar el sistema mediante técnicas estructuradas (DFD, DER, diccionario de datos) y orientadas a objetos (diagramas UML).
+        Diseñar una base de datos relacional robusta y escalable que soporte grandes volúmenes de transacciones.
+        Proponer mecanismos avanzados de seguridad para pagos electrónicos y validación de entradas mediante códigos QR dinámicos.
+        Desarrollar interfaces de usuario intuitivas y responsive que mejoren la usabilidad en dispositivos móviles y escritorio.
+        Implementar reportes en tiempo real y herramientas de analítica para organizadores de eventos.
+        Elaborar un prototipo funcional que demuestre la viabilidad técnica de las mejoras propuestas.
+        El logro de estos objetivos permitirá transformar SuperTicket.bo en una plataforma más eficiente, segura y competitiva, consolidando su liderazgo en el mercado boliviano de ticketing digital.
+      </p>
+    </article>
+    <article class="text-black">
+      <h1>Metodologia</h1>
+      <p>
+        El estudio se realiza bajo el enfoque analítico-descriptivo con orientación aplicada, combinando investigación documental, observación directa y análisis de requerimientos del sistema actual de SuperTicket.bo.
+        Metodología
+        Método analítico-descriptivo
+        Enfoque cuantitativo-cualitativo mixto
+        Investigación aplicada
+        Diseño no experimental transversal
+        Análisis de sistema existente (SuperTicket.bo)
+        Medios de Investigación
+        Revisión bibliográfica y documental
+        Observación directa del portal web y app móvil
+        Entrevistas semiestructuradas a usuarios y organizadores
+        Encuestas a clientes frecuentes
+        Análisis de métricas públicas de la plataforma
+        Estudio de casos similares (Ticketmaster, Eventbrite, etc.)
+        Instrumentos
+        Guías de entrevista y cuestionarios
+        Fichas de observación
+        Herramientas de modelado: Lucidchart, Draw.io, StarUML
+        Diagramas estructurados (DFD, DER, Diccionario de datos)
+        Diagramas UML (casos de uso, clases, secuencia)
+        Prototipo en Figma / Adobe XD
+        Base de datos MySQL / PostgreSQL
+        Técnicas de Recolección
+        Observación participante
+        Entrevistas en profundidad
+        Encuestas digitales (Google Forms)
+        Análisis de contenido web
+        Benchmarking de plataformas competidoras
+        La combinación de estas técnicas y herramientas garantiza un análisis riguroso, objetivo y completo del sistema actual, permitiendo proponer soluciones técnicas viables y alineadas con las necesidades reales de los usuarios.
+      </p>
+    </article>
+    <article class="text-black">
+      <h1>Planificacion de Actividades</h1>
+      <p>
+
+      </p>
+    </article>
+  </section>
+</div>
