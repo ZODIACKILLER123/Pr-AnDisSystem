@@ -1,5 +1,318 @@
 ---
+import diagramaC from '../../assets/images/diagramaContexto.png'
+import dfd_0 from '../../assets/images/dfd-0.png'
+import dfd_1 from '../../assets/images/dfd-1.png'
+import dfd_2 from '../../assets/images/dfd-2.jpeg'
+import dfd_3 from '../../assets/images/dfd-3.jpeg'
+import dfd_4 from '../../assets/images/dfd-4.jpeg'
+import entidadRelacion from '../../assets/images/entidadRelacion.png'
 
+import NAV from '../tools/navegationBar.astro'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+
+
+const flujos = [
+  {
+    n: "E01", evento: "Registro de nuevo evento", origen: "Organizador", destino: "Sistema",
+    tipo: "Entrada",
+    desc: "El organizador ingresa datos del evento: nombre, fecha, lugar, precios, aforo, imagen, etc."
+  },
+  {
+    n: "E02", evento: "Confirmación de evento creado", origen: "Sistema", destino: "Organizador",
+    tipo: "Salida",
+    desc: "El sistema confirma que el evento ha sido registrado correctamente."
+  },
+  {
+    n: "E03", evento: "Solicitud de compra de entrada", origen: "Cliente", destino: "Sistema",
+    tipo: "Entrada",
+    desc: "El cliente selecciona evento, cantidad y tipo de entrada."
+  },
+  {
+    n: "E04", evento: "Solicitud de pago", origen: "Sistema", destino: "Pasarela de Pago",
+    tipo: "Salida",
+    desc: "Envío de datos de transacción a la pasarela (tarjeta, QR, etc.)."
+  },
+  {
+    n: "E05", evento: "Confirmación de pago", origen: "Pasarela de Pago", destino: "Sistema",
+    tipo: "Entrada",
+    desc: "La pasarela notifica que el pago fue aprobado."
+  },
+  {
+    n: "E06", evento: "Envío de entrada digital", origen: "Sistema", destino: "Servicio de Correo",
+    tipo: "Salida",
+    desc: "Se genera PDF con código QR y se envía al cliente."
+  },
+  {
+    n: "E07", evento: "Confirmación de entrega", origen: "Servicio de Correo", destino: "Sistema",
+    tipo: "Entrada",
+    desc: "Notificación de que el correo fue enviado exitosamente."
+  },
+  {
+    n: "E08", evento: "Consulta de reporte de ventas", origen: "Organizador", destino: "Sistema",
+    tipo: "Entrada",
+    desc: "Solicitud de estadísticas y reportes del evento."
+  },
+  {
+    n: "E09", evento: "Envío de reporte", origen: "Sistema", destino: "Organizador",
+    tipo: "Salida",
+    desc: "El sistema entrega reporte en formato PDF o pantalla."
+  },
+];
 ---
 
+<header class="bg-[#1e538a] lg:h-27 md:15 sm:15 mb-5">
+  <NAV />
+</header>
+
+<div class="items-start w-full flex items-center justify-center">
+<!-- recuadro de puntos -->
+  
+  <section class="bg-gray-800 w-100 h-fit flex-col p-6 rounded-2xl top-6 sticky hidden lg:flex self-start">
+    <h3 class="text-2xl text-white m-3 font-dynapuff font-bold text-3xl text-center border-b-1 mb-6">Analisis Estructurado</h3>
+    <ul>
+      <li>
+        <h2 class="text-2xl font-bold font-dynapuff border-b-2">MODELO AMBIENTAL</h2>
+        <ul>
+          <li class="text-white m-3">
+            <a href="#declaracion" class="nav-link block text-gray-400 text-sm px-3 py-2 rounded-md border-l-2 border-transparent transition-all duration-200 hover:text-cyan-400">
+              Declaracion de Proposito
+            </a>
+          </li>
+          <li class="text-white m-3">
+            <a href="#diagrama" class="nav-link block text-gray-400 text-sm px-3 py-2 rounded-md border-l-2 border-transparent transition-all duration-200 hover:text-cyan-400">
+              Diagrama de Contexto
+            </a>
+          </li>
+          <li class="text-white m-3">
+            <a href="#lista" class="nav-link block text-gray-400 text-sm px-3 py-2 rounded-md border-l-2 border-transparent transition-all duration-200 hover:text-cyan-400">
+              Lista de Acontecimientos
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="text-2xl font-dynapuff font-bold border-b-2">MODELO DE COMPORTAMIENTO</h2>
+        <ul>
+          <li class="text-white m-3">
+            <a href="#dfd" class="nav-link block text-gray-400 text-sm px-3 py-2 rounded-md border-l-2 border-transparent transition-all duration-200 hover:text-cyan-400">
+              DFD por Niveles
+            </a>
+          </li>
+          <li class="text-white m-3">
+            <a href="#der" class="nav-link block text-gray-400 text-sm px-3 py-2 rounded-md border-l-2 border-transparent transition-all duration-200 hover:text-cyan-400">
+              DER
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="w-150 m-7">
+
+    <!-- Declaracion de Propositos -->
+    <article id="declaracion" class="mt-10">
+      <h2 class="text-3xl text-black font-dynapuff border-b-2 font-bold">Declaración de Propósitos</h2> 
+      <div class="bg-gradient-to-l from-gray-500 to-gray-800 mt-5 rounded-2xl p-6 ">
+        <h2 class="text-2xl font-dynapuff mb-4 font-bold text-center">El propósito del sistema SuperTicket.bo es:</h2>
+        <p class="text-xl">Proporcionar una plataforma web segura, eficiente y accesible que permita a los organizadores de eventos culturales, deportivos y artísticos gestionar la venta, control y administración de entradas en línea, mientras ofrece a los usuarios finales una experiencia de compra rápida, confiable y satisfactoria, contribuyendo al desarrollo del sector cultural boliviano mediante la digitalización de procesos tradicionales.</p>
+      </div>
+      <div class="text-black mt-5 border-l-5 border-purple-600 p-4 rounded-2xl bg-gray-300">
+        <div class="flex justify-center items-center gap-4">
+          <Icon name="organizator" size={50} />
+          <h3 class="text-2xl font-dynapuff border-b-2 font-bold">Para los Organizadores</h3>
+        </div>
+        <p>Ofrecer herramientas completas para crear eventos, configurar precios, gestionar aforo, obtener reportes en tiempo real y controlar el acceso mediante códigos QR.</p>
+      </div>
+      <div class="text-black mt-5 border-l-5 border-blue-600 p-4 rounded-2xl bg-gray-300">
+        <div class="flex justify-center items-center gap-4">
+          <Icon name="assistants" size={50} />
+          <h3 class="text-2xl font-dynapuff border-b-2 font-bold">Para los Asistentes</h3>
+        </div>
+        <p>Garantizar una compra sencilla, segura y móvil, con entrega inmediata de entradas digitales, notificaciones y acceso rápido a su historial de eventos.</p>
+      </div>
+      <div class="text-black mt-5 border-l-5 border-green-600 p-4 rounded-2xl bg-gray-300">
+        <div class="flex justify-center items-center gap-4">
+          <Icon name="platform" size={50} />
+          <h3 class="text-2xl font-dynapuff border-b-2 font-bold">Para la Plataforma</h3>
+        </div>
+        <p>Mantener altos estándares de seguridad en pagos, escalabilidad ante picos de demanda y una arquitectura técnica moderna que permita futuras mejoras.</p>
+      </div>
+    </article>
+
+    <!-- Diagrama de Contexto  -->
+
+    <article id="diagrama" class="mt-10">
+      <h2 class="text-3xl text-black font-dynapuff border-b-2 font-bold">Diagrama de Contexto</h2> 
+      <div class="bg-gradient-to-l from-green-500 to-green-800 mt-5 rounded-2xl p-6 ">
+        <p class="text-xl">El Diagrama de Contexto representa la visión global del sistema SuperTicket.bo, mostrando las entidades externas que interactúan con él y los flujos de información principales.</p>
+      </div>
+      <div class="mt-5 mb-5 border-red-500 border-5 rounded-2xl border-dashed">
+        <Image src={diagramaC} alt="Diagrama de Contexto" class="rounded-2xl" />
+      </div>
+      <div class=" grid grid-cols-2 gap-5">
+        <div class="text-black mt-5 border-l-5 border-purple-600 p-8 rounded-2xl bg-gray-300">
+          <div class="flex justify-center items-center gap-4">
+            <Icon name="organizator" size={50} />
+            <h3 class="text-2xl font-dynapuff mb-4 border-b-2 font-bold">Organizador de Eventos</h3>
+          </div>
+          <p class="text-center">Crea eventos, configura precios y recibe reportes de ventas</p>
+        </div>
+        <div class="text-black mt-5 border-l-5 border-blue-600 p-8 rounded-2xl bg-gray-300">
+          <div class="flex justify-center items-center gap-4">
+            <Icon name="assistants" size={50} />
+            <h3 class="text-2xl font-dynapuff mb-4 border-b-2 font-bold">Cliente / Asistente</h3>
+          </div>
+          <p class="text-center">Busca eventos, compra entradas y recibe boletos digitales</p>
+        </div>
+        <div class="text-black mt-5 border-l-5 border-green-600 p-8 rounded-2xl bg-gray-300">
+          <div class="flex justify-center items-center gap-4">
+            <Icon name="paid" size={50} />
+            <h3 class="text-2xl font-dynapuff mb-4 border-b-2 font-bold">Pasarela de Pago</h3>
+          </div>
+          <p class="text-center">Procesamiento seguro de pagos (tarjetas, QR, billeteras)</p>
+        </div>
+        <div class="text-black mt-5 border-l-5 border-red-600 p-8 rounded-2xl bg-gray-300">
+          <div class="flex justify-center items-center gap-4">
+            <Icon name="mail" size={50} />
+            <h3 class="text-2xl font-dynapuff mb-4 border-b-2 font-bold">Servicio de Correo</h3>
+          </div>
+          <p class="text-center">Envío automático de entradas y notificaciones</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Lista de Acontecimientos -->
+
+    <article id="lista" class="mt-10">
+      <div class="text-black">
+        <h2 class="text-3xl font-dynapuff font-bold border-b-2 mb-5">Lista de Acontecimientos</h2>
+        <p class="text-center">Relación de todos los flujos de información entre el sistema SuperTicket.bo y las entidades externas identificadas en el Diagrama de Contexto.</p>
+      </div>
+      <div class="w-full overflow-x-auto rounded-2xl shadow-lg">
+      <!-- Vista tabla — solo lg+ -->
+      <table class="hidden lg:table w-full text-sm text-left border-collapse">
+        <thead>
+          <tr class="bg-[#1e538a] text-white">
+            <th class="px-4 py-3 font-medium rounded-tl-2xl">N°</th>
+            <th class="px-4 py-3 font-medium">Evento / Flujo</th>
+            <th class="px-4 py-3 font-medium">Origen</th>
+            <th class="px-4 py-3 font-medium">Destino</th>
+            <th class="px-4 py-3 font-medium">Tipo</th>
+            <th class="px-4 py-3 font-medium rounded-tr-2xl">Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          {flujos.map((f, i) => (
+            <tr class={`border-b border-gray-700 transition-colors duration-150 hover:bg-gray-700 ${i % 2 === 0 ? 'bg-gray-800' : 'bg-gray-800/60'}`}>
+              <td class="px-4 py-3 font-mono text-cyan-400 font-medium">{f.n}</td>
+              <td class="px-4 py-3 text-white font-medium">{f.evento}</td>
+              <td class="px-4 py-3 text-white">{f.origen}</td>
+              <td class="px-4 py-3 text-white">{f.destino}</td>
+              <td class="px-4 py-3">
+                <span class={`px-2 py-1 rounded-full text-xs font-medium ${f.tipo === 'Entrada' ? 'bg-cyan-400/15 text-cyan-300' : 'bg-purple-400/15 text-purple-300'}`}>
+                  {f.tipo}
+                </span>
+              </td>
+              <td class="px-4 py-3 text-white text-xs leading-relaxed max-w-xs">{f.desc}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <!-- Vista tarjetas — solo mobile/md -->
+      <div class="lg:hidden flex flex-col gap-4 p-4 bg-gray-900 rounded-2xl">
+        {flujos.map((f) => (
+          <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-cyan-400 font-semibold text-sm">{f.n}</span>
+              <span class={`px-2 py-1 rounded-full text-xs font-medium ${f.tipo === 'Entrada' ? 'bg-cyan-400/15 text-cyan-300' : 'bg-purple-400/15 text-purple-300'}`}>
+                {f.tipo}
+              </span>
+            </div>
+            <p class="text-white font-medium text-sm mb-3">{f.evento}</p>
+            <div class="grid grid-cols-2 gap-2 text-xs mb-3">
+              <div>
+                <span class="text-gray-500 uppercase tracking-wide">Origen</span>
+                <p class="text-gray-300 mt-0.5">{f.origen}</p>
+              </div>
+              <div>
+                <span class="text-gray-500 uppercase tracking-wide">Destino</span>
+                <p class="text-gray-300 mt-0.5">{f.destino}</p>
+              </div>
+            </div>
+            <p class="text-gray-400 text-xs leading-relaxed border-t border-gray-700 pt-3">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    <p class="text-center mt-5 text-black">La Lista de Acontecimientos constituye la base para la descomposición funcional del sistema y el posterior desarrollo de los Diagramas de Flujo de Datos (DFD) de nivel 0 y 1.</p>
+    </article>
+    
+    <!-- DFD -->
+
+    <article id="dfd" class="mt-6 text-black mt-10">
+      <h2 class="text-3xl text-center border-b-2 font-dynapuff font-bold">DIAGRAMA DE FLUJO DE DATOS (DFD)</h2>
+      <div class="mt-5">
+        <div class="border-purple-800">
+          <h3 class="font-dynapuff font-bold text-black mb-5 text-2xl text-center">DFD Nivel 0 - Visión General del Sistema</h3>
+          <Image src={dfd_0} alt="dfd_0" class="border-purple-800 border-3 rounded-2xl p-4 mb-5"/>
+          <p class="bg-gradient-to-r from-purple-400 to-purple-700 p-4 rounded-2xl mt-4 text-white">Representa el sistema como un único proceso principal que interactúa con todas las entidades externas.</p>
+        </div>
+        <div class="border-blue-800 mt-5">
+          <h3 class="font-dynapuff font-bold text-black mb-5 text-2xl text-center">DFD Nivel 1 - Descomposición del Proceso Principal</h3>
+          <Image src={dfd_1} alt="dfd_0" class="border-blue-800 border-3 rounded-2xl p-4 mb-5"/>
+          <p class="bg-gradient-to-r from-blue-400 to-blue-700 p-4 rounded-2xl mt-4 text-white">Descompone el proceso principal en 5 subprocesos: Gestión de Eventos, Registro de Usuarios, Procesamiento de Compras, Control de Pagos y Generación de Reportes.</p>
+        </div>
+        <div class="border-purple-800 mt-5">
+          <h3 class="font-dynapuff font-bold text-black mb-5 text-2xl text-center">DFD Nivel 2</h3>
+          <Image src={dfd_2} alt="dfd_0" class="border-green-800 border-3 rounded-2xl p-4 mb-5"/>
+        </div>
+        <div class="border-purple-800 mt-5">
+          <h3 class="font-dynapuff font-bold text-black mb-5 text-2xl text-center">DFD Nivel 3</h3>
+          <Image src={dfd_3} alt="dfd_0" class="border-red-800 border-3 rounded-2xl p-4 mb-5"/>
+        </div>
+        <div class="border-purple-800 mt-5">
+          <h3 class="font-dynapuff font-bold text-black mb-5 text-2xl text-center">DFD Nivel 4</h3>
+          <Image src={dfd_4} alt="dfd_0" class="border-orange-800 border-3 rounded-2xl p-4 mb-5"/>
+        </div>
+      </div>
+    </article>
+
+    <!-- MER -->
+
+    <article id="der" class="text-black mt-10">
+      <h2 class="text-3xl font-dynapuff font-bold text-center border-b-2 ">DIAGRAMA ENTIDAD RELACION</h2>
+      <p class="text-center mt-5">Modelo conceptual de la base de datos del sistema SuperTicket.bo, identificando entidades, atributos y relaciones cardinales.</p>
+      <Image src={entidadRelacion} alt="MER" />
+    </article>
+
+  </section>
+
+</div>
+
+<script>
+  const links = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('#declaracion, #diagrama, #lista, #dfd, #der');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(link => {
+          link.classList.remove('text-cyan-400', 'border-cyan-400', 'bg-cyan-400/10');
+          link.classList.add('text-gray-400', 'border-transparent');
+        });
+        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (active) {
+          active.classList.remove('text-gray-400', 'border-transparent');
+          active.classList.add('text-cyan-400', 'border-cyan-400', 'bg-cyan-400/10');
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
 

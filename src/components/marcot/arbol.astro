@@ -1,0 +1,70 @@
+---
+import tree from '../../assets/images/arbol.png'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+---
+<article class="text-black mt-4">
+  <h1 class="text-2xl font-dynapuff border-b-2">Arbol de Problema</h1>
+  <div class="mt-5">
+    <h3 class="text-xl font-bold">Problema Central:</h3>
+    <div class="bg-gradient-to-r from-blue-400 to-blue-800 p-5 rounded-2xl">
+      <h2 class="font-bold text-white text-center">Ineficiencia en la gestión y venta de entradas a eventos</h2>
+      <h2 class="font-bold text-white text-center">Causas Principales</h2>
+      <ul>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-white">Procesos manuales en la validación de boletos en puerta.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-white">Falta de actualización en tiempo real del aforo y estado de ventas.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-white">Escasa automatización en la gestión de reembolsos y cambios.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-white">Comunicación deficiente entre plataforma, organizadores y clientes.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-white">Dependencia de personal físico en puntos de venta y control de acceso.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-white">Procesos manuales en la validación de boletos en puerta.</p>
+        </li>
+      </ul>
+      <h2 class="font-bold text-yellow-400 text-center">Efectos Principales</h2>
+      <ul>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-yellow-300">Insatisfacción y quejas frecuentes de los asistentes.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-yellow-300">Pérdida de ingresos por errores en control de aforo.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-yellow-300">Dificultad para tomar decisiones rápidas por parte de organizadores.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-yellow-300">Riesgo de fraude y reventa no controlada.</p>
+        </li>
+        <li class="flex gap-3 m-3">
+          <Icon name="wrong" size={30} class="text-red-600"/>
+          <p class="text-yellow-300">Imagen negativa de la plataforma ante eventos de alta demanda.</p>
+        </li> 
+      </ul>
+    </div>
+    <div class="mt-6">
+      <h2 class="text-red-600 text-xl font-dynapuff">Representacion Grafica del Arbol de Problemas: </h2>
+      <Image src={tree} alt="arbol P" width={500} class="mt-5 mb-5"/> 
+        <p class="text-blue-700 font-bold text-center mb-5">Árbol de Problemas - SuperTicket.bo</p>
+        <p>El árbol de problemas permite visualizar claramente las relaciones causa-efecto del problema central, sirviendo como base fundamental para la formulación de objetivos y el diseño de soluciones efectivas.</p>   
+    </div>
+  </div>
+</article>
