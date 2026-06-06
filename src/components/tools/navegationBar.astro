@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 import logo from '../../assets/QPToZJ69.jpeg'
 import { Icon } from 'astro-icon/components'
 
-import base from '../utils/base'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 ---
 
 <nav>
