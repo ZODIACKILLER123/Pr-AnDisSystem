@@ -9,6 +9,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://ZODIACKILLER123.github.io',
+  base: '/Pr-AnDisSystem',
   integrations: [react(), icon()],
 
   vite: {
