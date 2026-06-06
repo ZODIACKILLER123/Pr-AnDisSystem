@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets'
+
+import oop from '../../assets/images/diagramaObjetos.png'
+
+import NAV from '../tools/navegationBar.astro' 
+import FOOTER from '../tools/footer.astro'
+
+---
+
+<header class="bg-[#1e538a] lg:h-27 md:15 sm:15 mb-5">
+  <NAV />
+</header>
+
+<div class="mt-5 flex flex-col items-center">
+  <h1 class="text-black mb-6 text-4xl font-dynapuff font-bold text-center">DIAGRAMA ORIENTADO A OBJETOS</h1>
+  <Image src={oop} alt="oop" />
+</div>
+<FOOTER />

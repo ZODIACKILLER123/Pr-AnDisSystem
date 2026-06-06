@@ -2,12 +2,14 @@
 import NAVBAR from '../components/tools/navegationBar.astro'  
 import CARROUSEL from '../components/tools/carrousel.astro'
 import CARD from '../components/tools/cards.astro'
+import FOOTER from '../components/tools/footer.astro'
+
 ---
 <header class="bg-[#1e538a] lg:h-27 md:15 sm:15">
     <NAVBAR />
 </header>
 
-<main class="w-full flex flex-col ">  
+<main class="w-full flex flex-col mb-10">  
   <CARROUSEL />
   <article class="bg-slate-200 flex flex-col justify-center items-center h-100 mb-10">
     <h2 class="text-black text-3xl md:text-4xl text-center font-mono">SISTEMA DE GESTION DE VENTA PARA SUPERTICKET BOLIVIA</h2>
@@ -29,3 +31,4 @@ import CARD from '../components/tools/cards.astro'
     </div>
   </section>
 </main>
+<FOOTER />

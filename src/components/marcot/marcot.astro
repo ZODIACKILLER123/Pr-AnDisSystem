@@ -1,8 +1,6 @@
 ---
 import NAV from '../tools/navegationBar.astro'
 import "../../assets/fonts.css"
-import { Image } from 'astro:assets'
-import { Icon } from 'astro-icon/components'
 
 import INTRO from '../marcot/introduction.astro'
 import ANTECEDENTES from '../marcot/antecedentes.astro'
@@ -12,6 +10,7 @@ import FORMULACION from '../marcot/formulacion.astro'
 import PROPOSITO from '../marcot/propositoes.astro'
 import METODOLOGIA from '../marcot/metodologia.astro'
 import ACT from '../marcot/actividad.astro'
+import FOOTER from '../tools/footer.astro'
 ---
 
 <header class="bg-[#1e538a] lg:h-27 md:15 sm:15 mb-5"> 
@@ -113,6 +112,8 @@ import ACT from '../marcot/actividad.astro'
 
   </section>
 </div>
+
+<FOOTER />
 
 <script>
   const links = document.querySelectorAll('.nav-link');

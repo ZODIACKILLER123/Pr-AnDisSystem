@@ -1,0 +1,74 @@
+---
+import NAV from '../tools/navegationBar.astro'
+import FOOTER from '../tools/footer.astro'
+
+---
+
+<header class="bg-[#1e538a] lg:h-27 md:15 sm:15 mb-5">
+  <NAV />
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-10">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+    <!-- Integrantes -->
+    <section>
+      <h2 class="text-2xl font-medium border-b text-black border-gray-300 pb-3 mb-5">Integrantes</h2>
+
+      {[
+        { initials: "FA", name: "Freddy Alejandro Paco Arce" },
+        { initials: "JM", name: "Jersson Mirko Quispe Torrico" },
+        { initials: "JA", name: "Jhamil Aron Oviedo Chura" },
+        { initials: "Aj", name: "Angel Joel Coaquira Condori" },
+      ].map(m => (
+        <div class="flex items-center gap-3 text-black bg-white border border-gray-200 rounded-xl p-4 mb-3 hover:border-[#1e538a] transition-colors">
+          <div class="w-11 h-11 rounded-full bg-blue-100 text-[#1e538a] flex items-center justify-center font-medium text-sm shrink-0">
+            {m.initials}
+          </div>
+          <div>
+            <p class="font-medium text-sm">{m.name}</p>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- Contacto -->
+    <section>
+      <h2 class="text-2xl font-medium border-b border-gray-300 pb-3 mb-5">Contáctanos</h2>
+      <div class="bg-white border border-gray-200 rounded-xl p-6">
+        <p class="text-sm text-gray-500 leading-relaxed mb-5">
+          En SuperTicket nos esforzamos por brindarte la mejor experiencia. Si tienes alguna consulta o necesitas asistencia, nuestro equipo está listo para ayudarte.
+        </p>
+
+        <div class="flex flex-col gap-3 mb-5 text-sm text-gray-500">
+          <span>✉️ contacto@superticket.bo</span>
+          <span>📞 +591 2 123-4567</span>
+          <span>📍 La Paz, Bolivia</span>
+        </div>
+
+        <hr class="border-gray-200 mb-5" />
+
+        <div class="grid grid-cols-2 gap-3 mb-3">
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Nombre</label>
+            <input type="text" placeholder="Tu nombre" class="input input-bordered w-full input-sm" />
+          </div>
+          <div>
+            <label class="text-xs text-gray-500 mb-1 block">Correo</label>
+            <input type="email" placeholder="tu@correo.com" class="input input-bordered w-full input-sm" />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="text-xs text-gray-500 mb-1 block">Mensaje</label>
+          <textarea placeholder="¿En qué podemos ayudarte?" class="textarea textarea-bordered w-full" rows="3"></textarea>
+        </div>
+        <button class="btn w-full bg-[#1e538a] text-white hover:opacity-90 border-none">
+          Enviar mensaje
+        </button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<FOOTER />

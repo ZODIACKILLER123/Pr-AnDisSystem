@@ -11,6 +11,7 @@ import NAV from '../tools/navegationBar.astro'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 
+import FOOTER from '../tools/footer.astro'
 
 const flujos = [
   {
@@ -152,7 +153,7 @@ const flujos = [
       <div class="mt-5 mb-5 border-red-500 border-5 rounded-2xl border-dashed">
         <Image src={diagramaC} alt="Diagrama de Contexto" class="rounded-2xl" />
       </div>
-      <div class=" grid grid-cols-2 gap-5">
+      <div class=" grid lg:grid-cols-2 sm:grid-cols-1 gap-5">
         <div class="text-black mt-5 border-l-5 border-purple-600 p-8 rounded-2xl bg-gray-300">
           <div class="flex justify-center items-center gap-4">
             <Icon name="organizator" size={50} />
@@ -292,7 +293,7 @@ const flujos = [
   </section>
 
 </div>
-
+<FOOTER />
 <script>
   const links = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('#declaracion, #diagrama, #lista, #dfd, #der');
