@@ -1,7 +1,37 @@
- <article class="text-black mt-4">
-  <h1 class="text-2xl font-dynapuff border-b-2">Planificacion de Actividades</h1>
-  <p>
+<section class="max-w-3xl mx-auto px-4 py-10">
+  <div class="mb-6">
+    <h2 class="text-2xl font-medium text-black font-dynapuff border-b-2 mb-4">Planificación de actividades</h2>
+    <p class="text-sm text-gray-500 mt-1">Duración total: 8 semanas · Inicio: 15 de abril de 2026</p>
+  </div>
 
-  </p>
-</article>
+  <div class="flex flex-col gap-3">
+    {[
+      { n:1, title:"Recolección de información y análisis del sistema actual", product:"Informe de diagnóstico", dates:"15 abr – 21 abr", color:"bg-blue-100 text-blue-800", bar:"bg-blue-400", w:"w-[12%]" },
+      { n:2, title:"Identificación de actores y requerimientos funcionales", product:"Lista de requerimientos", dates:"22 abr – 28 abr", color:"bg-green-100 text-green-800", bar:"bg-green-500", w:"w-[25%]" },
+      { n:3, title:"Elaboración del modelo ambiental y diagrama de contexto", product:"Diagramas del entorno del sistema", dates:"29 abr – 5 may", color:"bg-amber-100 text-amber-800", bar:"bg-amber-400", w:"w-[37%]" },
+      { n:4, title:"Diseño del modelo entidad-relación (MER) y diccionario de datos", product:"Base de datos relacional diseñada", dates:"6 may – 19 may", color:"bg-purple-100 text-purple-800", bar:"bg-purple-400", w:"w-[62%]" },
+      { n:5, title:"Diseño del sistema: pantallas, diagramas UML y prototipo", product:"Prototipo funcional del sistema", dates:"20 may – 2 jun", color:"bg-teal-100 text-teal-800", bar:"bg-teal-400", w:"w-[87%]" },
+      { n:6, title:"Redacción final del informe y preparación de defensa", product:"Documento final de análisis y diseño", dates:"3 jun – 10 jun", color:"bg-orange-100 text-orange-800", bar:"bg-orange-400", w:"w-full" },
+    ].map(f => (
+      <div class="bg-white border border-gray-200 rounded-xl p-4 grid grid-cols-[32px_1fr] sm:grid-cols-[32px_1fr_auto] gap-3 items-start">
+        <div class={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium shrink-0 ${f.color}`}>{f.n}</div>
+        <div>
+          <p class="text-sm text-black font-medium">{f.title}</p>
+          <p class="text-xs text-gray-500 mt-1">{f.product}</p>
+          <div class="mt-2 h-1 bg-gray-100 rounded-full overflow-hidden">
+            <div class={`h-full rounded-full ${f.bar} ${f.w}`}></div>
+          </div>
+        </div>
+        <p class="text-xs text-gray-400 text-right hidden sm:block pt-1">{f.dates}</p>
+      </div>
+    ))}
+  </div>
+
+  <div class="text-black mt-4 bg-gray-50 rounded-xl p-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+    <div><p class="text-xs ">Inicio</p><p class="text-sm font-medium">15 de abril de 2026</p></div>
+    <div><p class="text-xs ">Entrega</p><p class="text-sm font-medium">10 de junio de 2026</p></div>
+    <div><p class="text-xs ">Duración</p><p class="text-sm font-medium">8 semanas</p></div>
+    <div><p class="text-xs ">Fases</p><p class="text-sm font-medium">6 fases</p></div>
+  </div>
+</section>
 

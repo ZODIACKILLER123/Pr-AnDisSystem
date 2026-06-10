@@ -1,17 +1,28 @@
+---
+import img1 from '../../assets/carrouselIMG/Shop5_Rotativo_21.jpg'
+import img2 from '../../assets/carrouselIMG/Shop5_Rotativo_22.jpg'
+import img3 from '../../assets/carrouselIMG/Shop5_Rotativo_24.jpg'
 
-<div class="lg:card-md md:card-md sm:card-sm bg-base-100 shadow-sm rounded-3xl">
-  <figure class="px-10 pt-10">
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes"
-      class="rounded-xl" />
-  </figure>
-  <div class="card-body items-center text-center">
-    <h2 class="card-title text-[#EC4899]">Card Title</h2>
-    <p class="">A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions">
-      <button class="btn bg-[#EC4899] hover:bg-pink-700 hover:text-yellow-300">Buy Now</button>
+const cards = [
+  { img: img1, alt: "Foto 1", title: "Título 1", desc: "compra tus entradas" },
+  { img: img2, alt: "Foto 2", title: "Título 2", desc: "compra tus entradas" },
+  { img: img3, alt: "Foto 3", title: "Título 3", desc: "compra tus entradas" },
+]
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+  {cards.map(card => (
+    <div class="card bg-base-100 shadow-sm rounded-3xl">
+      <figure class="px-6 pt-6">
+        <img src={card.img.src} alt={card.alt} class="rounded-xl w-full h-52 object-cover" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title text-[#EC4899]">{card.title}</h2>
+        <p>{card.desc}</p>
+        <div class="card-actions">
+          <button class="btn bg-[#EC4899] hover:bg-pink-700 hover:text-yellow-300">Comprar</button>
+        </div>
+      </div>
     </div>
-  </div>
+  ))}
 </div>
-
